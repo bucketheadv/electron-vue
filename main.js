@@ -19,12 +19,13 @@ class Main {
         icon: iconPath
       })
 
+      let path = `http://localhost:${port}/webpack-dev-server/index.html`
       if (NODE_ENV === 'development') {
         self.appWindow.webContents.openDevTools()
-        self.appWindow.webContents.loadURL(`http://localhost:${port}/webpack-dev-server/`)
       } else {
-        self.appWindow.webContents.loadURL(`file://${__dirname}/dist/index.html`)
+        path = `file://${__dirname}/dist/index.html`
       }
+      self.appWindow.webContents.loadURL(path)
     })
 
     app.on('close', () => {

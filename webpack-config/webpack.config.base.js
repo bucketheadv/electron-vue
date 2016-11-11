@@ -3,6 +3,7 @@ const validate = require('webpack-validator')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const formatter = require('eslint-formatter-pretty')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 let config = {
   entry: [
@@ -42,6 +43,14 @@ let config = {
         // Important when your vue loader can not resolve the js code in vue files
         test: /\.vue$/,
         loader: 'vue'
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+      },
+      {
+        test: /\.jpg$/i,
+        loader: 'url-loader?limit=50000&name=[path][name].[ext]'
       }
     ]
   },
@@ -51,7 +60,8 @@ let config = {
       filename: 'index.html',
       inject: true,
       template: path.join(__dirname, '../index.html')
-    })
+    }),
+    new ExtractTextPlugin('style.css')
   ]
 }
 
