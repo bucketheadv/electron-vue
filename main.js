@@ -2,6 +2,7 @@ const { app, BrowserWindow } = require('electron')
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const port = process.env.PORT || 8080
 const path = require('path')
+const menu = require('./src/window/Menu.es6')
 
 const iconPath = path.join(__dirname, './public/images/logo.png')
 
@@ -18,6 +19,12 @@ class Main {
         height: 600,
         icon: iconPath
       })
+
+      if (process.platform === 'darwin') {
+        app.dock.setIcon(iconPath)
+      }
+
+      app.setApplicationMenu(menu)
 
       let path = `http://localhost:${port}/webpack-dev-server/index.html`
       if (NODE_ENV === 'development') {
