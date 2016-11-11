@@ -68,5 +68,21 @@ if(process.platform === 'darwin') {
   })
 }
 
+if (process.env.NODE_ENV === 'development') {
+  let devTools = {
+    label: '开发者工具',
+    submenu: [
+      {
+        label: '切换',
+        accelerator: 'CmdOrCtrl+T',
+        click(item, focusWindow) {
+          if(focusWindow) focusWindow.webContents.toggleDevTools()
+        }
+      }
+    ]
+  }
+  template.splice(template.length - 1, 0, devTools)
+}
+
 const menu = Menu.buildFromTemplate(template)
 module.exports = menu;

@@ -7,8 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --watch --colors --config webpack-config/webpack.config.development.js",
     "build": "node_modules/webpack/bin/webpack.js --progress --colors --config webpack-config/webpack.config.production.js",
-    "start": "electron .",
-    "prod": "npm run build && NODE_ENV=production electron ."
+    "start": "NODE_ENV=development electron .",
+    "prod": "npm run build && NODE_ENV=production electron .",
+    "pack": "npm run build && gulp pack"
   },
   "keywords": [
     "vue",
@@ -27,6 +28,7 @@
   },
   "dependencies": {
     "electron": "^1.4.6",
+    "materialize-css": "^0.97.8",
     "vue": "^2.0.5",
     "vue-router": "^2.0.1"
   },
@@ -39,9 +41,11 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.25.0",
+    "electron-packager": "^8.2.0",
     "eslint-formatter-pretty": "^1.1.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
+    "gulp": "^3.9.1",
     "html-webpack-plugin": "^2.24.1",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",

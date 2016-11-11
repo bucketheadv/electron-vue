@@ -49,7 +49,7 @@ let config = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },
       {
-        test: /\.jpg$/i,
+        test: /\.(jpg|png|gif|woff|eot|ttf|woff2)$/i,
         loader: 'url-loader?limit=50000&name=[path][name].[ext]'
       }
     ]
