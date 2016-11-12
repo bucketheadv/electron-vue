@@ -39,6 +39,10 @@ let config = {
         }
       },
       {
+        test: /vux.src.*?js$/,
+        loader: 'babel'
+      },
+      {
         // if Vue can not be compiled correct, remember that config your .babelrc or package.json
         // Important when your vue loader can not resolve the js code in vue files
         test: /\.vue$/,
@@ -49,7 +53,7 @@ let config = {
         loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
       },
       {
-        test: /\.(jpg|png|gif|woff|eot|ttf|woff2)$/i,
+        test: /\.(jpg|png|gif|woff|eot|ttf|woff2|svg)$/i,
         loader: 'url-loader?limit=50000&name=[path][name].[ext]'
       }
     ]

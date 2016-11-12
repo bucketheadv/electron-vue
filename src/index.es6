@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App'
-import 'materialize-css/dist/css/materialize.css'
 
 Vue.config.debug = true
 
