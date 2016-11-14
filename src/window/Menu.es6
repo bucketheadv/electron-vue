@@ -73,6 +73,13 @@ if (process.env.NODE_ENV === 'development') {
     label: '开发者工具',
     submenu: [
       {
+        label: '重载',
+        accelerator: 'CmdOrCtrl+R',
+        click(item, focusWindow) {
+          if(focusWindow) focusWindow.webContents.reload()
+        }
+      },
+      {
         label: '切换',
         accelerator: 'CmdOrCtrl+T',
         click(item, focusWindow) {
