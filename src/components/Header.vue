@@ -29,6 +29,8 @@ export default {
   line-height: 38px;
   text-align: center;
   background: #222;
+  font-family: monospace;
+  font-size: 12px;
   .item {
     position: absolute;
     top: 0;

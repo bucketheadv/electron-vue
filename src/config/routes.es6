@@ -8,20 +8,20 @@ export default [
       {
         path: '/login',
         meta: { auth: false },
-        component: resolve => require(['../views/login/'], resolve)
+        component: resolve => require(['views/login/'], resolve)
       },
       {
         path: '/signout',
-        component: resolve => require(['../views/signout/'], resolve)
+        component: resolve => require(['views/signout/'], resolve)
       },
       {
         path: '/home',
-        component: resolve => require(['../views/home/'], resolve)
+        component: resolve => require(['views/home/'], resolve)
       },
       {
         path: '/',
         meta: { auth: false },
-        component: resolve => require(['../views/index/'], resolve)
+        component: resolve => require(['views/index/'], resolve)
       },
       {
         path: '*',
