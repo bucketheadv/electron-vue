@@ -19,7 +19,7 @@
 import { mapState } from 'vuex'
 import logo from './logo.png'
 export default {
-  data() {
+  data () {
     return {
       logo
     }

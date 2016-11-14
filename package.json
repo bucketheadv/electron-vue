@@ -9,7 +9,8 @@
     "build": "node_modules/webpack/bin/webpack.js --progress --colors --config webpack-config/webpack.config.production.js",
     "start": "NODE_ENV=development electron .",
     "prod": "npm run build && NODE_ENV=production electron .",
-    "pack": "npm run build && gulp pack"
+    "pack": "npm run build && gulp pack",
+    "eslint": "node_modules/eslint/bin/eslint.js --ext .vue src"
   },
   "keywords": [
     "vue",
@@ -26,6 +27,9 @@
       "transform-runtime"
     ]
   },
+  "pre-commit": [
+    "eslint"
+  ],
   "dependencies": {
     "electron": "^1.4.6",
     "vue": "^2.0.5",
@@ -36,6 +40,7 @@
   },
   "devDependencies": {
     "babel-core": "^6.18.2",
+    "babel-eslint": "^7.1.0",
     "babel-loader": "^6.2.7",
     "babel-plugin-transform-object-rest-spread": "^6.16.0",
     "babel-plugin-transform-runtime": "^6.15.0",
@@ -44,7 +49,10 @@
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.25.0",
     "electron-packager": "^8.2.0",
+    "eslint": "^3.10.0",
+    "eslint-config-vue": "^2.0.1",
     "eslint-formatter-pretty": "^1.1.0",
+    "eslint-plugin-vue": "^1.0.0",
     "extract-text-webpack-plugin": "^1.0.1",
     "file-loader": "^0.9.0",
     "gulp": "^3.9.1",

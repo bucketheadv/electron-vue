@@ -14,7 +14,7 @@ import { mapActions } from 'vuex'
 export default {
   methods: {
     ...mapActions(['SIGNOUT']),
-    submit() {
+    submit () {
       this.SIGNOUT()
       this.$router.replace({ path: '/login' })
     }

@@ -20,7 +20,7 @@
 <script>
 import { mapActions } from 'vuex'
 export default {
-  data() {
+  data () {
     return {
       btn: false,
       form: {
@@ -31,9 +31,9 @@ export default {
   },
   methods: {
     ...mapActions(['SIGNIN']),
-    submit() {
+    submit () {
       this.btn = true
-      if(!this.form.id || !this.form.name) return
+      if (!this.form.id || !this.form.name) return
       this.SIGNIN(this.form)
       this.$router.replace({ path: '/home' })
     }
