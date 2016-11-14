@@ -7,11 +7,11 @@
       <router-link slot="right" v-if="!user.id" to="/login">
         登录
       </router-link>
-      <div class="login-msg" v-if="!user.id">
-        <img width="50" :src="logo" alt=""> <br>
-        哈哈,恭喜入坑Vue2
-      </div>
     </common-header>
+    <div class="login-msg" v-if="!user.id">
+      <img width="50" :src="logo" alt=""> <br>
+      哈哈,恭喜入坑Vue2
+    </div>
   </div>
 </template>
 
