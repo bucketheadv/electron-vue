@@ -1,29 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import App from './App'
+import routes from 'config/routes'
+import store from 'store'
+import common from 'components'
 
-Vue.config.debug = true
+import './styles'
 
-Vue.use(VueRouter)
-
-const router = new VueRouter({
-  base: __dirname,
-  routes: [
-    {
-      path: '/'
-    }
-  ]
+Object.keys(common).forEach(key => {
+  let name = key.replace(/(\w)/, v => v.toUpperCase()).toLowerCase()
+  Vue.component(`common-${name}`, common[key])
 })
 
-new Vue({
-  router: router,
-  render: h => h(App)
-}).$mount('#app')
+Vue.use(VueRouter)
+const router = new VueRouter({
+  routes
+})
 
-// new Vue({
-//   el: '#app',
-//   template: '<App />',
-//   components: {
-//     App
-//   }
-// })
+router.beforeEach(({meta, path}, from, next) => {
+  var { auth = true } = meta
+  var isLogin = Boolean(store.state.user.id)
+  // var isLogin = Boolean(store.state.user)
+  if(auth && !isLogin && path !== '/login') {
+    return next({ path: '/login' })
+  }
+  next()
+})
+
+new Vue({ store, router }).$mount('#app')

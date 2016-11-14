@@ -1,34 +1,10 @@
 <template>
-  <div class="login">
-    <login-form />
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
-import LoginForm from 'components/LoginForm'
-export default {
-  data () {
-    return {
-    }
-  },
-  components: {
-    LoginForm
-  }
-}
+export default {}
 </script>
 
-<style language="scss">
-body {
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-image: url('../public/images/login_bg.jpg');
-}
-
+<style lang="less" scoped>
 </style>

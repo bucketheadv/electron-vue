@@ -17,7 +17,7 @@ let config = {
 
   resolve: {
     root: path.join(__dirname, '..', 'src'),
-    extensions: ['', '.js', '.jsx', '.es6', '.vue'],
+    extensions: ['', '.css', '.less', '.js', '.jsx', '.es6', '.vue'],
     alias: {
       'vue': 'vue/dist/vue.js'
     }
@@ -37,6 +37,10 @@ let config = {
           presets: ['es2015', 'react', 'stage-0'],
           plugins: ['transform-object-rest-spread', 'transform-runtime']
         }
+      },
+      {
+        test: /\.less$/,
+        loader: 'style!css!less'
       },
       {
         test: /vux.src.*?js$/,
