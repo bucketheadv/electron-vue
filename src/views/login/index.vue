@@ -3,26 +3,31 @@
     <common-header title="登录">
       <router-link slot="left" to="/">返回</router-link>
     </common-header>
-    <form class="login" v-on:submit.prevent="submit">
-      <div class="line">
-        <div v-show="btn && !form.id">id不能为空</div>
-        <input type="number" placeholder="输入你的id" v-model="form.id">
-      </div>
-      <div class="line">
-        <div v-show="btn && !form.name">用户名不能为空</div>
-        <input type="text" placeholder="输入你的用户名" v-model="form.name">
-      </div>
-      <button>登录</button>
-    </form>
+    <div class="loginForm">
+      <img :src="logo" class="logoImg" />
+      <form class="login" v-on:submit.prevent="submit">
+        <div class="line">
+          <div v-show="btn && !form.id">id不能为空</div>
+          <input type="number" placeholder="输入你的id" v-model="form.id">
+        </div>
+        <div class="line">
+          <div v-show="btn && !form.name">用户名不能为空</div>
+          <input type="text" placeholder="输入你的用户名" v-model="form.name">
+        </div>
+        <button>登录</button>
+      </form>
+    </div>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
+import logo from '../../../public/images/logo.png'
 export default {
   data () {
     return {
       btn: false,
+      logo: logo,
       form: {
         id: '',
         name: ''
@@ -41,5 +46,25 @@ export default {
 }
 </script>
 
-<style lang="css">
+<style lang="less" scoped>
+.loginForm {
+  display: flex;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  flex: 1;
+  align-self: stretch;
+  justify-content: center;
+  align-items: center;
+}
+.line {
+  margin: 30px auto;
+}
+.logoImg {
+  width: 180px;
+  height: 180px;
+  margin-right: 10px;
+}
 </style>

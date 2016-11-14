@@ -30,7 +30,7 @@ export default {
   text-align: center;
   background: #222;
   font-family: monospace;
-  font-size: 12px;
+  font-size: 14px;
   .item {
     position: absolute;
     top: 0;
@@ -38,6 +38,7 @@ export default {
     z-index: 1;
     a {
       color: #fff;
+      text-decoration: none;
     }
   }
   .left {
@@ -45,6 +46,11 @@ export default {
   }
   .right {
     right: 10px;
+  }
+  .title {
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
   }
 }
 </style>
