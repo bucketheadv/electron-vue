@@ -17,7 +17,7 @@
 
 <script>
 import { mapState } from 'vuex'
-import logo from './logo.png'
+import logo from 'assets/images/vue.png'
 export default {
   data () {
     return {

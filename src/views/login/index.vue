@@ -22,7 +22,7 @@
 
 <script>
 import { mapActions } from 'vuex'
-import logo from '../../../public/images/logo.png'
+import logo from 'assets/images/logo.png'
 export default {
   data () {
     return {

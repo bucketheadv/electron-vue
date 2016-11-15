@@ -4,7 +4,7 @@ import routes from 'config/routes'
 import store from 'store'
 import common from 'components'
 
-import './styles'
+import 'assets/styles'
 
 Object.keys(common).forEach(key => {
   let name = key.replace(/(\w)/, v => v.toUpperCase()).toLowerCase()
