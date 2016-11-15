@@ -10,7 +10,10 @@ import semantic from 'semantic/semantic.min.js'
 
 Object.keys(common).forEach(key => {
   let name = key.replace(/(\w)/, v => v.toUpperCase()).toLowerCase()
-  Vue.component(`common-${name}`, common[key])
+  // console.log(name);
+  // Vue.component(`common-${name}`, common[key])
+  console.log(key);
+  Vue.component(key, common[key])
 })
 
 Vue.use(VueRouter)

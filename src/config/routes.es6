@@ -19,8 +19,8 @@ export default [
         component: resolve => require(['views/home/'], resolve)
       },
       {
-        path: '/data',
-        component: resolve => require(['views/data/'], resolve)
+        path: '/settings',
+        component: resolve => require(['views/settings/'], resolve)
       },
       {
         path: '/',

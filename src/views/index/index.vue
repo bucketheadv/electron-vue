@@ -1,20 +1,17 @@
 <template>
-  <div>
-    <common-header title="首页">
-      <router-link slot="right" v-if="user.id" to="/home">
-        {{user.name}}
-      </router-link>
-      <router-link slot="right" v-if="!user.id" to="/login">
-        登录
-      </router-link>
-    </common-header>
-    <div class="login-msg" v-if="!user.id">
-      <img width="50" :src="logo" alt=""> <br>
-      哈哈,恭喜入坑Vue2
+  <div class="root">
+    <div>
+      <app-menu />
     </div>
+    <div class="container">
+      <div class="login-msg" v-if="!user.id">
+        <img width="50" :src="logo" alt=""> <br>
+        哈哈,恭喜入坑Vue2
+      </div>
       <router-link slot="right" to="/data">
         Data
       </router-link>
+    </div>
   </div>
 </template>
 
@@ -30,7 +27,10 @@ export default {
 
   computed: mapState({
     user: state => state.user
-  })
+  }),
+
+  components: {
+  }
 }
 </script>
 

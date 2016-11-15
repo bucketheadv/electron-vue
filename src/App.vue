@@ -6,5 +6,12 @@
 export default {}
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+.root {
+  display: flex;
+}
+.container {
+  margin: 10px;
+  width: 100%;
+}
 </style>

@@ -1,9 +1,8 @@
 <template>
   <div>
-    <common-header title="退出">
-      <router-link slot="left" to="/home">返回</router-link>
-    </common-header>
+    <app-menu />
     <div class="btn">
+      <router-link to="/home">首页</router-link>
       <button v-on:click="submit">确认退出</button>
     </div>
   </div>

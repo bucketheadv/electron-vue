@@ -1,8 +1,5 @@
 <template>
   <div>
-    <common-header title="登录">
-      <router-link slot="left" to="/">返回</router-link>
-    </common-header>
     <div class="loginForm">
       <img :src="logo" class="logoImg" />
       <form class="login" v-on:submit.prevent="submit">
