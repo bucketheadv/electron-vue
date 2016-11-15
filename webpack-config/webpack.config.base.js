@@ -19,7 +19,8 @@ let config = {
     root: path.join(__dirname, '..', 'src'),
     extensions: ['', '.css', '.less', '.js', '.jsx', '.es6', '.vue'],
     alias: {
-      'vue': 'vue/dist/vue.js'
+      'vue': 'vue/dist/vue.js',
+      'semantic': path.resolve(__dirname, '../node_modules/semantic-ui-css/')
     }
   },
 
@@ -68,6 +69,15 @@ let config = {
       filename: 'index.html',
       inject: true,
       template: path.join(__dirname, '../index.html')
+    }),
+    new webpack.ProvidePlugin({
+      $               : "jquery",
+      jQuery          : "jquery",
+      "window.jQuery" : "jquery",
+      "root.jQuery"   : "jquery",
+      semantic        : "semantic-ui-css",
+      Semantic        : "semantic-ui-css",
+      'semantic-ui'   : "semantic-ui-css"
     }),
     new ExtractTextPlugin('style.css')
   ]

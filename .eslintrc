@@ -2,6 +2,10 @@
   "root": true,
   "extends": "vue",
   "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "jquery": true
+  },
   "rules": {
   }
 }

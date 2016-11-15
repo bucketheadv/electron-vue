@@ -5,6 +5,8 @@ import store from 'store'
 import common from 'components'
 
 import 'assets/styles'
+import 'semantic/semantic.min.css'
+import semantic from 'semantic/semantic.min.js'
 
 Object.keys(common).forEach(key => {
   let name = key.replace(/(\w)/, v => v.toUpperCase()).toLowerCase()

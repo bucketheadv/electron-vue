@@ -12,6 +12,9 @@
       <img width="50" :src="logo" alt=""> <br>
       哈哈,恭喜入坑Vue2
     </div>
+      <router-link slot="right" to="/data">
+        Data
+      </router-link>
   </div>
 </template>
 
