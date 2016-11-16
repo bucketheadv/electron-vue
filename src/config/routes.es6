@@ -15,10 +15,6 @@ export default [
         component: resolve => require(['views/signout/'], resolve)
       },
       {
-        path: '/home',
-        component: resolve => require(['views/home/'], resolve)
-      },
-      {
         path: '/settings',
         component: resolve => require(['views/settings/'], resolve)
       },

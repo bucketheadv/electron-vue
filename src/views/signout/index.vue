@@ -2,7 +2,7 @@
   <div>
     <app-menu />
     <div class="btn">
-      <router-link to="/home">首页</router-link>
+      <router-link to="/">首页</router-link>
       <button v-on:click="submit">确认退出</button>
     </div>
   </div>

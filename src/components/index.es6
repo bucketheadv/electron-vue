@@ -1,3 +1,4 @@
 //export Header from './Header'
 import AppMenu from './AppMenu'
-export default { AppMenu }
+import AppHeader from './AppHeader'
+export default { AppMenu, AppHeader }

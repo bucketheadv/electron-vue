@@ -37,7 +37,7 @@ export default {
       this.btn = true
       if (!this.form.id || !this.form.name) return
       this.SIGNIN(this.form)
-      this.$router.replace({ path: '/home' })
+      this.$router.replace({ path: '/' })
     }
   }
 }

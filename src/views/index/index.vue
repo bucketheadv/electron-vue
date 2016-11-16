@@ -4,13 +4,11 @@
       <app-menu />
     </div>
     <div class="container">
-      <div class="login-msg" v-if="!user.id">
+      <app-header />
+      <div class="login-msg" v-if="user.id">
         <img width="50" :src="logo" alt=""> <br>
         哈哈,恭喜入坑Vue2
       </div>
-      <router-link slot="right" to="/data">
-        Data
-      </router-link>
     </div>
   </div>
 </template>
