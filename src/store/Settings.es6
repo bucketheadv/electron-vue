@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { Message } from 'element-ui'
 
 function getSettings() {
   let settings0 = {}
@@ -18,6 +19,9 @@ export default {
 
     SAVE_SETTINGS(state, settings) {
       localStorage.setItem('settings', JSON.stringify(settings))
+      Message({
+        message: '设置已保存'
+      })
     }
   },
 

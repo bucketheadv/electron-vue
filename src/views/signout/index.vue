@@ -1,8 +1,5 @@
 <template>
   <div class="root">
-    <div class="">
-      <app-menu />
-    </div>
     <div class="container">
       <div class="btn">
         <div class="ui buttons">

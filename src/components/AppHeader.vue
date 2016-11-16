@@ -1,11 +1,13 @@
 <template>
-  <div class="ui menu">
-    <div class="ui right dropdown item">
-      {{user.username}}
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <div class="item">
-          <router-link to="/signout">注销</router-link>
+  <div>
+    <div class="ui menu">
+      <div class="ui right dropdown item">
+        {{user.username}}
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          <div class="item">
+            <router-link to="/signout">注销</router-link>
+          </div>
         </div>
       </div>
     </div>

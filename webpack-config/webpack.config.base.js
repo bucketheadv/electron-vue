@@ -55,11 +55,11 @@ let config = {
       },
       {
         test: /\.css$/,
-        loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+        loader: ExtractTextPlugin.extract('style', 'css')
       },
       {
-        test: /\.(jpg|png|gif|woff|eot|ttf|woff2|svg)$/i,
-        loader: 'url-loader?limit=50000&name=[path][name].[ext]'
+        test: /\.(jpg|png|gif|woff|eot|ttf|woff2|svg)(\?[a-z0-9=\.]+)?$/i,
+        loader: 'url-loader?limit=100000&name=[path][name].[ext]'
       }
     ]
   },
