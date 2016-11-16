@@ -1,6 +1,7 @@
 const validate = require('webpack-validator')
 const path = require('path')
 const formatter = require('eslint-formatter-pretty')
+const webpack = require('webpack')
 
 let config = {
   entry: './src/main.js',
@@ -24,7 +25,13 @@ let config = {
 
   eslint: {
     formatter
-  }
+  },
+
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development')
+    }),
+  ]
 }
 
 module.exports = validate(config)
