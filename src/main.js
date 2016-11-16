@@ -2,9 +2,9 @@ const { app, BrowserWindow } = require('electron')
 const NODE_ENV = process.env.NODE_ENV || 'development'
 const port = process.env.PORT || 8080
 const path = require('path')
-const menu = require('./src/window/Menu.es6')
+const menu = require('window/Menu')
 
-const iconPath = path.join(__dirname, './public/images/logo.png')
+const iconPath = path.join(__dirname, '../public/images/logo.png')
 
 class Main {
   constructor() {
@@ -30,7 +30,7 @@ class Main {
       if (NODE_ENV === 'development') {
         self.appWindow.webContents.openDevTools()
       } else {
-        path = `file://${__dirname}/dist/index.html`
+        path = `file://${__dirname}/index.html`
       }
       self.appWindow.webContents.loadURL(path)
     })

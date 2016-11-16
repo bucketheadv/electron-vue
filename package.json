@@ -2,15 +2,17 @@
   "name": "electron-vue",
   "version": "0.0.1",
   "description": "electron vue application.",
-  "main": "main.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "node_modules/webpack-dev-server/bin/webpack-dev-server.js --progress --watch --colors --config webpack-config/webpack.config.development.js",
-    "build": "node_modules/webpack/bin/webpack.js --progress --colors --config webpack-config/webpack.config.production.js",
-    "start": "NODE_ENV=development electron .",
-    "prod": "npm run build && NODE_ENV=production electron .",
+    "start": "npm run build-ele-dev && electron .",
+    "prod": "npm run build && electron .",
     "pack": "npm run build && gulp pack",
-    "eslint": "node_modules/eslint/bin/eslint.js --ext .vue src"
+    "eslint": "node_modules/eslint/bin/eslint.js --ext .vue src",
+    "build-ele-dev": "node_modules/webpack/bin/webpack.js --progress --colors --config webpack-config/webpack.config.electron.js",
+    "build-ele": "node_modules/webpack/bin/webpack.js --progress --colors --config webpack-config/webpack.config.electron.production.js",
+    "build": "npm run build-ele && node_modules/webpack/bin/webpack.js --progress --colors --config webpack-config/webpack.config.production.js"
   },
   "pre-commit": [
     "eslint"

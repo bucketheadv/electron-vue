@@ -68,7 +68,7 @@ let config = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       inject: true,
-      template: path.join(__dirname, '../index.html')
+      template: path.join(__dirname, '../src/index.html')
     }),
     new webpack.ProvidePlugin({
       $               : "jquery",
