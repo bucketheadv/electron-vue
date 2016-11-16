@@ -12,7 +12,6 @@ Object.keys(common).forEach(key => {
   let name = key.replace(/(\w)/, v => v.toUpperCase()).toLowerCase()
   // console.log(name);
   // Vue.component(`common-${name}`, common[key])
-  console.log(key);
   Vue.component(key, common[key])
 })
 

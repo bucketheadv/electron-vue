@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="ui secondary vertical pointing menu leftMenu">
-      <router-link to="/" class="item">Home</router-link>
-      <router-link to="/login" class="item">Login</router-link>
-      <router-link to="/signout" class="item">Sign out</router-link>
-      <router-link to="/settings" class="item">Settings</router-link>
+      <router-link to="/" class="item">首頁</router-link>
+      <router-link to="/login" class="item">登錄</router-link>
+      <router-link to="/signout" class="item">註銷</router-link>
+      <router-link to="/settings" class="item">設置</router-link>
     </div>
   </div>
 </template>

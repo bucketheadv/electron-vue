@@ -12,13 +12,13 @@
                 <input type="file" v-on:change="preview" webkitdirectory />
               </span>
             </div>
-            <span class="folder">{{ form.baseFolder }}</span>
+            <span class="folder">{{ settings.baseFolder }}</span>
           </div>
         </div>
         <div class="field">
           <label>类型</label>
-          <input type="radio" value="hexo">Hexo
-          <input type="radio" value="Jekyll">Jekyll
+          <input type="radio" name="type" value="hexo" v-model="settings.type">Hexo
+          <input type="radio" name="type" value="jekyll" v-model="settings.type">Jekyll
         </div>
         <div class="ui buttons">
           <button type="reset" class="ui button">重置</button>
@@ -31,27 +31,34 @@
 </template>
 
 <script>
+import { mapActions, mapState } from 'vuex'
 export default {
   data () {
     return {
-      form: {
-        baseFolder: ''
-      }
     }
   },
   components: {
   },
   methods: {
+    ...mapActions(['SETTING', 'SAVE_SETTINGS']),
     preview (e) {
       const file = e.target.files[0]
       if (!file) return
       // console.log(file.path);
-      this.form.baseFolder = file.path
+      // this.settings.baseFolder = file.path
+      this.SETTING({ baseFolder: file.path })
     },
 
     submit (e) {
+      this.SAVE_SETTINGS(this.settings)
     }
   },
+
+  computed: mapState({
+    settings: state => {
+      return state.settings
+    }
+  }),
 
   mounted () {
     // console.log($(this.$route));
