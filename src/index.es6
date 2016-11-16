@@ -22,7 +22,7 @@ const router = new VueRouter({
 
 router.beforeEach(({meta, path}, from, next) => {
   var { auth = true } = meta
-  var isLogin = Boolean(store.state.user.id)
+  var isLogin = Boolean(store.state.user.username)
   // var isLogin = Boolean(store.state.user)
   if(auth && !isLogin && path !== '/login') {
     return next({ path: '/login' })

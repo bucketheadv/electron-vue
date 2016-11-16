@@ -1,7 +1,7 @@
 <template>
   <div class="ui menu">
     <div class="ui right dropdown item">
-      {{user.name}}
+      {{user.username}}
       <i class="dropdown icon"></i>
       <div class="menu">
         <div class="item">

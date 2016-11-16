@@ -1,9 +1,16 @@
 <template>
-  <div>
-    <app-menu />
-    <div class="btn">
-      <router-link to="/">首页</router-link>
-      <button v-on:click="submit">确认退出</button>
+  <div class="root">
+    <div class="">
+      <app-menu />
+    </div>
+    <div class="container">
+      <div class="btn">
+        <div class="ui buttons">
+          <a v-on:click="back" class="ui button">返回</a>
+          <div class="or"></div>
+          <a v-on:click="submit" class="ui red button">确认退出</a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -16,6 +23,10 @@ export default {
     submit () {
       this.SIGNOUT()
       this.$router.replace({ path: '/login' })
+    },
+
+    back () {
+      window.history.back()
     }
   }
 }

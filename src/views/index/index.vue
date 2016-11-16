@@ -5,7 +5,7 @@
     </div>
     <div class="container">
       <app-header />
-      <div class="login-msg" v-if="user.id">
+      <div class="login-msg" v-if="user.username">
         <img width="50" :src="logo" alt=""> <br>
         哈哈,恭喜入坑Vue2
       </div>

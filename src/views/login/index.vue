@@ -4,12 +4,12 @@
       <img :src="logo" class="logoImg" />
       <form class="ui form login" v-on:submit.prevent="submit">
         <div class="line field">
-          <div v-show="btn && !form.id">id不能为空</div>
-          <input type="number" placeholder="输入你的id" v-model="form.id">
+          <div v-show="btn && !form.username">用户名不能为空</div>
+          <input type="text" placeholder="输入你的id" v-model="form.username">
         </div>
         <div class="line field">
-          <div v-show="btn && !form.name">用户名不能为空</div>
-          <input type="text" placeholder="输入你的用户名" v-model="form.name">
+          <div v-show="btn && !form.password">密码不能为空</div>
+          <input type="password" placeholder="输入你的用户名" v-model="form.password">
         </div>
         <button class="ui button">登录</button>
       </form>
@@ -26,8 +26,8 @@ export default {
       btn: false,
       logo: logo,
       form: {
-        id: '',
-        name: ''
+        username: '',
+        password: ''
       }
     }
   },
@@ -35,7 +35,7 @@ export default {
     ...mapActions(['SIGNIN']),
     submit () {
       this.btn = true
-      if (!this.form.id || !this.form.name) return
+      if (!this.form.username || !this.form.password) return
       this.SIGNIN(this.form)
       this.$router.replace({ path: '/' })
     }

@@ -2,6 +2,7 @@
   <div class="root">
     <app-menu />
     <div class="container">
+      <app-header />
       <form class="ui form" v-on:submit.prevent="submit">
         <div class="field">
           <label>根目录</label>
@@ -21,7 +22,7 @@
           <input type="radio" name="type" value="jekyll" v-model="settings.type">Jekyll
         </div>
         <div class="ui buttons">
-          <button type="reset" class="ui button">重置</button>
+          <button type="button" class="ui button" @click="resetSettings">清空设置</button>
           <div class="or"></div>
           <button type="submit" class="ui positive button">保存</button>
         </div>
@@ -47,6 +48,13 @@ export default {
       // console.log(file.path);
       // this.settings.baseFolder = file.path
       this.SETTING({ baseFolder: file.path })
+    },
+
+    resetSettings () {
+      this.SETTING({
+        baseFolder: '',
+        type: ''
+      })
     },
 
     submit (e) {
