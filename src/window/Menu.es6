@@ -68,7 +68,7 @@ if(process.platform === 'darwin') {
   })
 }
 
-if (process.env.NODE_ENV === 'development') {
+if (process.env.NODE_ENV !== 'production') {
   let devTools = {
     label: '开发者工具',
     submenu: [
