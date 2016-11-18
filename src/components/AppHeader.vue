@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header">
     <div class="ui menu">
       <div class="ui right dropdown item">
         {{user.username}}
@@ -32,4 +32,7 @@ export default {
 </script>
 
 <style lang="css">
+.header {
+  margin-bottom: 10px;
+}
 </style>
