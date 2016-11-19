@@ -22,7 +22,7 @@
           <input type="radio" name="type" value="jekyll" v-model="settings.type">Jekyll
         </div>
         <div class="ui buttons">
-          <button type="button" class="ui button" @click="resetSettings">清空设置</button>
+          <button type="button" class="ui button" @click="resetSettings">重置</button>
           <div class="or"></div>
           <button type="submit" class="ui positive button">保存</button>
         </div>
@@ -41,7 +41,7 @@ export default {
   components: {
   },
   methods: {
-    ...mapActions(['SETTING', 'SAVE_SETTINGS']),
+    ...mapActions(['SETTING', 'SAVE_SETTINGS', 'RELOAD_SETTINGS']),
     preview (e) {
       const file = e.target.files[0]
       if (!file) return
@@ -51,10 +51,7 @@ export default {
     },
 
     resetSettings () {
-      this.SETTING({
-        baseFolder: '',
-        type: ''
-      })
+      this.RELOAD_SETTINGS()
     },
 
     submit (e) {
